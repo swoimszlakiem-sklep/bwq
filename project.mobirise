@@ -67,7 +67,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 60,
+    "uniqCompNum": 61,
     "versionPublish": "5.7.12",
     "screenshot": "screenshot.png",
     "mcSmartCart": {
@@ -1347,6 +1347,109 @@
           "_params": {}
         },
         {
+          "_name": "content5",
+          "_sourceTheme": "firmm4",
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".image-wrapper img": {
+              "width": "100%",
+              "object-fit": "cover"
+            },
+            ".card-title": {
+              "margin-bottom": "26px",
+              "color": "@secondaryColor"
+            },
+            ".mbr-text": {
+              "margin-bottom": "30px"
+            },
+            ".iconfont-wrapper": {
+              "position": "relative",
+              "z-index": "1",
+              "margin-bottom": "30px",
+              "display": "inline-block",
+              "text-align": "center",
+              "width": "70px",
+              "height": "70px",
+              "svg": {
+                "position": "absolute",
+                "top": "-20px",
+                "left": "-28px",
+                "#grad_1": {
+                  "stop-color": "@iconColor"
+                },
+                "#grad_2": {
+                  "stop-color": "lighten(@iconColor, 20)"
+                },
+                "#blur_svg": {
+                  "flood-color": "@iconColor"
+                }
+              },
+              ".mbr-iconfont": {
+                "color": "#ffffff",
+                "font-size": "38px",
+                "line-height": "73px",
+                "position": "absolute",
+                "top": "0",
+                "left": "14px",
+                "z-index": "5"
+              }
+            },
+            "@media (min-width: 992px)": {
+              ".text-wrapper when (@reverse)": {
+                "padding-right": "2rem"
+              },
+              ".text-wrapper when not (@reverse)": {
+                "padding-right": "0",
+                "padding-left": "2rem"
+              }
+            },
+            "@media (max-width: 991px)": {
+              ".text-wrapper": {
+                "text-align": "center"
+              },
+              ".image-wrapper": {
+                "margin-bottom": "40px"
+              },
+              ".mbr-text": {
+                "margin-bottom": "20px"
+              },
+              ".iconfont-wrapper": {
+                "margin-bottom": "20px"
+              }
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            }
+          },
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"firmm4_content5\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverse\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked=\"\">\n        <input type=\"checkbox\" title=\"Icon\" name=\"showIcon\">\n        <input type=\"color\" title=\"Icon Color\" value=\"#6b3df0\" name=\"iconColor\" condition=\"showIcon\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background-2.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected=\"\">\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background-2.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    \n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row align-items-center justify-content-center\" mbr-class=\"{'flex-row-reverse': reverse}\">\n            <div class=\"col-12 col-md-6 col-sm-8 col-lg order-1\">\n                <div class=\"text-wrapper\">\n                    <div class=\"icon_block\" mbr-if=\"showIcon\">\n                        <div class=\"iconfont-wrapper\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"> <defs> <filter filterUnits=\"userSpaceOnUse\" id=\"filter_svg\" x=\"0px\" y=\"0px\" width=\"124px\" height=\"133px\"> <feOffset in=\"SourceAlpha\" dx=\"0\" dy=\"10\"></feOffset> <feGaussianBlur result=\"blurOut\" stdDeviation=\"5.477\"></feGaussianBlur> <feFlood id=\"blur_svg\" result=\"floodOut\"></feFlood> <feComposite operator=\"atop\" in=\"floodOut\" in2=\"blurOut\"></feComposite> <feComponentTransfer> <feFuncA type=\"linear\" slope=\"0.4\"></feFuncA> </feComponentTransfer> <feMerge> <feMergeNode></feMergeNode> <feMergeNode in=\"SourceGraphic\"></feMergeNode> </feMerge> </filter> <linearGradient id=\"grad_svg\" x1=\"0%\" x2=\"76%\" y1=\"64%\" y2=\"0%\"> <stop id=\"grad_1\" offset=\"0%\" stop-opacity=\"1\"></stop> <stop id=\"grad_2\" offset=\"100%\" stop-opacity=\"1\"></stop> </linearGradient> </defs> <g filter=\"url(#filter_svg)\"> <path fill-rule=\"evenodd\" fill=\"rgb(255, 255, 255)\" d=\"M93.962,40.676 L94.014,71.763 L94.014,71.763 C94.018,73.881 92.902,75.831 91.086,76.878 L64.497,92.210 L64.497,92.210 C62.681,93.257 60.443,93.242 58.627,92.169 L31.971,76.427 L31.971,76.427 C30.160,75.359 29.044,73.400 29.041,71.289 L28.988,40.201 L28.988,40.201 C28.984,38.083 30.101,36.133 31.916,35.086 L58.504,19.752 L58.504,19.752 C60.319,18.705 62.557,18.720 64.373,19.793 L91.030,35.534 L91.030,35.534 C92.842,36.603 93.960,38.563 93.962,40.676 Z\"></path> </g> <path fill=\"url(#grad_svg)\" d=\"M93.962,40.676 L94.014,71.763 L94.014,71.763 C94.018,73.881 92.902,75.831 91.086,76.878 L64.497,92.210 L64.497,92.210 C62.681,93.257 60.443,93.242 58.627,92.169 L31.971,76.427 L31.971,76.427 C30.160,75.359 29.044,73.400 29.041,71.289 L28.988,40.201 L28.988,40.201 C28.984,38.083 30.101,36.133 31.916,35.086 L58.504,19.752 L58.504,19.752 C60.319,18.705 62.557,18.720 64.373,19.793 L91.030,35.534 L91.030,35.534 C92.842,36.603 93.960,38.563 93.962,40.676 Z\"></path> </svg>\n                            <span mbr-icon=\"\" class=\"mbr-iconfont mobi-mbri-shopping-cart mobi-mbri\"></span>\n                        </div>\n                    </div>\n                    <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .icon_block\">\n                        <b>Uniwersalne rozwiązanie</b></h4>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                        Myjka nadaje się do wszystkich rodzajów blatów, okien kuchennych, podłóg, kuchni, salonów i łazienek. Doskonała do samochodu, przestrzeni biurowych i zewnętrznych parapetów.</p>\n                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" mbr-buttons=\"\" mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-info-outline\" href=\"index.html#accordion01-1r\" data-app-placeholder=\"Type Text\">Czytaj więcej</a></div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-7 col-sm-8 col-lg-{{imageWidth}}\">\n                <div class=\"image-wrapper\">\n                    <img src=\"@PROJECT_PATH@/assets/images/p%C5%82ytki%20ceramiczne-1121x1121.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n        </div>\n    </div>\n\n</section>",
+          "_anchor": "content5-1m",
+          "_isUserblock": true,
+          "_cid": "u6gxmG2xvD",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
           "alias": false,
           "_styles": {
             "padding-top": "(@paddingTop * 1rem)",
@@ -1467,8 +1570,8 @@
           "_params": {}
         },
         {
-          "_name": "content5",
-          "_sourceTheme": "firmm4",
+          "_name": "accordion01",
+          "_sourceTheme": "visionm4",
           "_styles": {
             "padding-top": "(@paddingTop * 1rem)",
             "padding-bottom": "(@paddingBottom * 1rem)",
@@ -1478,71 +1581,79 @@
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
-            ".image-wrapper img": {
-              "width": "100%",
-              "object-fit": "cover"
+            ".mbr-iconfont": {
+              "font-size": "1.4rem !important",
+              "font-family": "'Moririse2' !important",
+              "color": "@primaryColor",
+              "margin-left": "1rem"
             },
-            ".card-title": {
-              "margin-bottom": "26px",
-              "color": "@secondaryColor"
+            ".panel-group": {
+              "border": "none"
             },
-            ".mbr-text": {
-              "margin-bottom": "30px"
+            ".panel-title": {
+              "display": "flex",
+              "align-items": "center",
+              "justify-content": "space-between"
             },
-            ".iconfont-wrapper": {
+            ".panel-body": {
+              "padding": "1rem 2rem"
+            },
+            ".header-wrapper": {
+              "position": "relative"
+            },
+            ".card-header": {
+              "background": "transparent",
+              "border": "2px solid transparent",
               "position": "relative",
-              "z-index": "1",
-              "margin-bottom": "30px",
-              "display": "inline-block",
-              "text-align": "center",
-              "width": "70px",
-              "height": "70px",
-              "svg": {
-                "position": "absolute",
-                "top": "-20px",
-                "left": "-28px",
-                "#grad_1": {
-                  "stop-color": "@iconColor"
+              "transition": "all 0.3s",
+              "border-radius": "30px!important",
+              "padding": "1rem 2rem",
+              "z-index": "2"
+            },
+            "span": {
+              "transition": "all 0.3s",
+              "color": "@border !important"
+            },
+            ".card": {
+              "overflow": "visible",
+              "&:hover": {
+                ".card-header": {
+                  "border-color": "@border"
                 },
-                "#grad_2": {
-                  "stop-color": "lighten(@iconColor, 20)"
+                ".hover-bg": {
+                  "background": "@cardhover",
+                  "right": "-8px",
+                  "top": "8px"
                 },
-                "#blur_svg": {
-                  "flood-color": "@iconColor"
+                "span": {
+                  "transform": "rotate(-90deg)"
                 }
-              },
-              ".mbr-iconfont": {
-                "color": "#ffffff",
-                "font-size": "38px",
-                "line-height": "73px",
-                "position": "absolute",
-                "top": "0",
-                "left": "14px",
-                "z-index": "5"
               }
             },
-            "@media (min-width: 992px)": {
-              ".text-wrapper when (@reverse)": {
-                "padding-right": "2rem"
+            ".hover-bg": {
+              "position": "absolute",
+              "right": "0px",
+              "top": "0px",
+              "width": "100%",
+              "transition": "all 0.3s",
+              "height": "100%",
+              "background": "@cardbg",
+              "border-radius": "30px!important",
+              "z-index": "1"
+            },
+            "@media (max-width: 768px)": {
+              ".panel-body": {
+                "padding": "1rem 0rem"
               },
-              ".text-wrapper when not (@reverse)": {
-                "padding-right": "0",
-                "padding-left": "2rem"
+              ".card-header": {
+                "padding": "1rem 1rem"
               }
             },
-            "@media (max-width: 991px)": {
-              ".text-wrapper": {
-                "text-align": "center"
-              },
-              ".image-wrapper": {
-                "margin-bottom": "40px"
-              },
-              ".mbr-text": {
-                "margin-bottom": "20px"
-              },
-              ".iconfont-wrapper": {
-                "margin-bottom": "20px"
-              }
+            "H4": {
+              "color": "#777d74"
+            },
+            ".panel-title-edit": {
+              "color": "#1c1c25"
             },
             ".mbr-fallback-image.disabled": {
               "display": "none"
@@ -1560,10 +1671,10 @@
               }
             }
           },
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"firmm4_content5\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverse\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked=\"\">\n        <input type=\"checkbox\" title=\"Icon\" name=\"showIcon\">\n        <input type=\"color\" title=\"Icon Color\" value=\"#6b3df0\" name=\"iconColor\" condition=\"showIcon\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background-2.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected=\"\">\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background-2.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    \n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row align-items-center justify-content-center\" mbr-class=\"{'flex-row-reverse': reverse}\">\n            <div class=\"col-12 col-md-6 col-sm-8 col-lg order-1\">\n                <div class=\"text-wrapper\">\n                    <div class=\"icon_block\" mbr-if=\"showIcon\">\n                        <div class=\"iconfont-wrapper\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"> <defs> <filter filterUnits=\"userSpaceOnUse\" id=\"filter_svg\" x=\"0px\" y=\"0px\" width=\"124px\" height=\"133px\"> <feOffset in=\"SourceAlpha\" dx=\"0\" dy=\"10\"></feOffset> <feGaussianBlur result=\"blurOut\" stdDeviation=\"5.477\"></feGaussianBlur> <feFlood id=\"blur_svg\" result=\"floodOut\"></feFlood> <feComposite operator=\"atop\" in=\"floodOut\" in2=\"blurOut\"></feComposite> <feComponentTransfer> <feFuncA type=\"linear\" slope=\"0.4\"></feFuncA> </feComponentTransfer> <feMerge> <feMergeNode></feMergeNode> <feMergeNode in=\"SourceGraphic\"></feMergeNode> </feMerge> </filter> <linearGradient id=\"grad_svg\" x1=\"0%\" x2=\"76%\" y1=\"64%\" y2=\"0%\"> <stop id=\"grad_1\" offset=\"0%\" stop-opacity=\"1\"></stop> <stop id=\"grad_2\" offset=\"100%\" stop-opacity=\"1\"></stop> </linearGradient> </defs> <g filter=\"url(#filter_svg)\"> <path fill-rule=\"evenodd\" fill=\"rgb(255, 255, 255)\" d=\"M93.962,40.676 L94.014,71.763 L94.014,71.763 C94.018,73.881 92.902,75.831 91.086,76.878 L64.497,92.210 L64.497,92.210 C62.681,93.257 60.443,93.242 58.627,92.169 L31.971,76.427 L31.971,76.427 C30.160,75.359 29.044,73.400 29.041,71.289 L28.988,40.201 L28.988,40.201 C28.984,38.083 30.101,36.133 31.916,35.086 L58.504,19.752 L58.504,19.752 C60.319,18.705 62.557,18.720 64.373,19.793 L91.030,35.534 L91.030,35.534 C92.842,36.603 93.960,38.563 93.962,40.676 Z\"></path> </g> <path fill=\"url(#grad_svg)\" d=\"M93.962,40.676 L94.014,71.763 L94.014,71.763 C94.018,73.881 92.902,75.831 91.086,76.878 L64.497,92.210 L64.497,92.210 C62.681,93.257 60.443,93.242 58.627,92.169 L31.971,76.427 L31.971,76.427 C30.160,75.359 29.044,73.400 29.041,71.289 L28.988,40.201 L28.988,40.201 C28.984,38.083 30.101,36.133 31.916,35.086 L58.504,19.752 L58.504,19.752 C60.319,18.705 62.557,18.720 64.373,19.793 L91.030,35.534 L91.030,35.534 C92.842,36.603 93.960,38.563 93.962,40.676 Z\"></path> </svg>\n                            <span mbr-icon=\"\" class=\"mbr-iconfont mobi-mbri-shopping-cart mobi-mbri\"></span>\n                        </div>\n                    </div>\n                    <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .icon_block\">\n                        <b>Uniwersalne rozwiązanie</b></h4>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                        Myjka nadaje się do wszystkich rodzajów blatów, okien kuchennych, podłóg, kuchni, salonów i łazienek. Doskonała do samochodu, przestrzeni biurowych i zewnętrznych parapetów.</p>\n                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" mbr-buttons=\"\" mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-info-outline\" href=\"index.html#accordion01-1r\" data-app-placeholder=\"Type Text\">Czytaj więcej</a></div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-7 col-sm-8 col-lg-{{imageWidth}}\">\n                <div class=\"image-wrapper\">\n                    <img src=\"@PROJECT_PATH@/assets/images/p%C5%82ytki%20ceramiczne-1121x1121.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n        </div>\n    </div>\n\n</section>",
-          "_anchor": "content5-1m",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"accordion1\" group=\"Accordions\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\" plugins=\"mbr-switch-arrow, mobirise-icons2\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n        <select title=\"Amount\" name=\"cardAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\" selected=\"\">6</option>\n        </select>\n        <header>Color</header>\n        <input type=\"color\" title=\"Border\" name=\"border\" value=\"#1c1c25\" selected=\"\">\n        <input type=\"color\" title=\"Background\" name=\"cardbg\" value=\"#f8f8f8\" selected=\"\">\n        <input type=\"color\" title=\"Hover\" name=\"cardhover\" value=\"#e0e5ff\" selected=\"\">\n\n\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-6.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected=\"\">\n            <input type=\"video\" title=\"Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background1-6.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked=\"\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.9\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"section-head pb-4 align-center\" mbr-if=\"showTitle || showSubtitle\">\n                    <h3 class=\"mbr-section-title mb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\">\n                        <b>FAQ</b>\n                    </h3>\n                    <h4 class=\"mbr-section-subtitle mb-4 mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>\n                </div>\n                <div id=\"bootstrap-accordion\" class=\"panel-group accordionStyles accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                    <div class=\"card mb-3\">\n                        <div class=\"header-wrapper\">\n                            <div class=\"hover-bg\"></div>\n                            <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n\n                                <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core=\"\" href=\"#collapse1\" aria-expanded=\"false\" aria-controls=\"collapse1\">\n                                    <h6 class=\"panel-title-edit mbr-fonts-style mb-0\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\"><b>Jak przechowywać urządzenie Super Cleaner 2.0 po użyciu?</b></h6>\n                                    <span class=\"sign mbr-iconfont mbri-arrow-down inactive\"></span>\n                                </a>\n                            </div>\n                        </div>\n                        <div id=\"collapse1\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">Super Cleaner 2.0 jest łatwy do przechowywania dzięki swojej lekkiej konstrukcji i kompaktowym rozmiarom. Można go bez problemu umieścić w szafce, spiżarni lub na wieszaku.</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card mb-3\" mbr-if=\"cardAmount > 1\">\n                        <div class=\"header-wrapper\">\n                            <div class=\"hover-bg\"></div>\n                            <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                                <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core=\"\" href=\"#collapse2\" aria-expanded=\"false\" aria-controls=\"collapse2\">\n                                    <h6 class=\"panel-title-edit mbr-fonts-style mb-0\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\"><b>Jakie są wymiary urządzenia Super Cleaner 2.0?</b></h6>\n                                    <span class=\"sign mbr-iconfont mbri-arrow-down inactive\"></span>\n                                </a>\n                            </div>\n                        </div>\n                        <div id=\"collapse2\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">Wysokość myjki wynosi 29,5 cm, a szerokość gąbki to 15,5 cm. Dzięki tym wymiarom, urządzenie jest wygodne w użyciu i zapewnia skuteczne czyszczenie.</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card mb-3\" mbr-if=\"cardAmount > 2\">\n                        <div class=\"header-wrapper\">\n                            <div class=\"hover-bg\"></div>\n                            <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                                <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core=\"\" href=\"#collapse3\" aria-expanded=\"false\" aria-controls=\"collapse3\">\n                                    <h6 class=\"panel-title-edit mbr-fonts-style mb-0\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\"><b>Czy mogę używać Super Cleaner 2.0 do czyszczenia różnych powierzchni?</b></h6>\n                                    <span class=\"sign mbr-iconfont mbri-arrow-down inactive\"></span>\n                                </a>\n                            </div>\n                        </div>\n                        <div id=\"collapse3\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">\n                                    Tak, Super Cleaner 2.0 nadaje się do czyszczenia różnorodnych powierzchni, w tym blatów, szyb okien, podłóg, kuchni, łazienek, samochodów i wielu innych.</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card mb-3\" mbr-if=\"cardAmount > 3\">\n                        <div class=\"header-wrapper\">\n                            <div class=\"hover-bg\"></div>\n                            <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                                <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core=\"\" href=\"#collapse4\" aria-expanded=\"false\" aria-controls=\"collapse4\">\n                                    <h6 class=\"panel-title-edit mbr-fonts-style mb-0\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\"><b>Jak działa konstrukcja push-pull typu ring w Super Cleaner 2.0?</b></h6>\n                                    <span class=\"sign mbr-iconfont mbri-arrow-down inactive\"></span>\n                                </a>\n                            </div>\n                        </div>\n                        <div id=\"collapse4\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">Konstrukcja push-pull typu ring jest zintegrowana z myjką, umożliwiając solidne wyciśnięcie brudnej wody bez konieczności używania rąk. Jest to higieniczne i wygodne rozwiązanie.</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card mb-3\" mbr-if=\"cardAmount > 4\">\n                        <div class=\"header-wrapper\">\n                            <div class=\"hover-bg\"></div>\n                            <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                                <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core=\"\" href=\"#collapse5\" aria-expanded=\"false\" aria-controls=\"collapse5\">\n                                    <h6 class=\"panel-title-edit mbr-fonts-style mb-0\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\"><b>&nbsp;Czy Super Cleaner 2.0 jest jednoręczny w obsłudze?</b></h6>\n                                    <span class=\"sign mbr-iconfont mbri-arrow-down inactive\"></span>\n                                </a>\n                            </div>\n                        </div>\n                        <div id=\"collapse5\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">Tak, Super Cleaner 2.0 jest zaprojektowany do obsługi jedną ręką, co sprawia, że czyszczenie staje się wygodne i efektywne.</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card mb-3\" mbr-if=\"cardAmount > 5\">\n                        <div class=\"header-wrapper\">\n                            <div class=\"hover-bg\"></div>\n                            <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                                <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core=\"\" href=\"#collapse6\" aria-expanded=\"false\" aria-controls=\"collapse6\">\n                                    <h6 class=\"panel-title-edit mbr-fonts-style mb-0\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\"><b>Jak szybko Super Cleaner 2.0 pochłania wodę?</b></h6>\n                                    <span class=\"sign mbr-iconfont mbri-arrow-down inactive\"></span>\n                                </a>\n                            </div>\n                        </div>\n                        <div id=\"collapse6\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">\n                                    Mini mop Super Cleaner 2.0 pochłania 30 ml wody w zaledwie 3 sekundy, co przyspiesza proces sprzątania i ułatwia jego przeprowadzenie.</p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "accordion01-1o",
           "_isUserblock": true,
-          "_cid": "u6gxmG2xvD",
+          "_cid": "u6gyczcyc7",
           "_protectedParams": [],
           "_global": false,
           "_once": false,

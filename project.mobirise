@@ -67,7 +67,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 51,
+    "uniqCompNum": 52,
     "versionPublish": "5.7.12",
     "screenshot": "screenshot.png",
     "mcSmartCart": {
@@ -528,6 +528,141 @@
           "_protectedParams": [],
           "_global": true,
           "_once": "menu",
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "overflow": "visible",
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value",
+              "& when (@gradientBg)": {
+                "background": "linear-gradient(to right bottom, fade(@bg-value, 80), fade(@color2, 100))"
+              }
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-overlay": {
+              "background": "@overlayColor"
+            },
+            ".mbr-section-subtitle": {
+              "margin-bottom": "10px"
+            },
+            ".mbr-section-title": {
+              "margin-bottom": "27px"
+            },
+            ".mbr-text": {
+              "margin-bottom": "35px",
+              "line-height": "1.54"
+            },
+            "& when (@showImage)": {
+              ".image__block": {
+                "margin-top": "-10px",
+                "margin-bottom": "-160px",
+                "position": "relative",
+                "z-index": "5",
+                "img": {
+                  "width": "100%",
+                  "height": "100%",
+                  "object-fit": "cover"
+                }
+              }
+            },
+            "@media (min-width: 768px)": {
+              "& when (@showAnimation)": {
+                ".circle1": {
+                  "position": "absolute",
+                  "left": "70px",
+                  "bottom": "70px",
+                  "width": "200px",
+                  "height": "200px",
+                  "z-index": "1",
+                  "background-color": "#fff",
+                  "border-radius": "50%",
+                  "opacity": ".1",
+                  "animation": "circleAnimation 13s linear infinite"
+                },
+                ".circle2": {
+                  "top": "150px",
+                  "left": "47.6%",
+                  "width": "100px",
+                  "height": "100px",
+                  "position": "absolute",
+                  "z-index": "1",
+                  "background-color": "#fff",
+                  "border-radius": "50%",
+                  "opacity": ".1",
+                  "animation": "circleAnimation 11s linear infinite"
+                },
+                ".circle3": {
+                  "right": "15%",
+                  "bottom": "140px",
+                  "width": "170px",
+                  "height": "170px",
+                  "position": "absolute",
+                  "z-index": "1",
+                  "background-color": "#fff",
+                  "border-radius": "50%",
+                  "opacity": ".1",
+                  "animation": "circleAnimation 10s linear infinite"
+                },
+                ".circle4": {
+                  "right": "3%",
+                  "top": "190px",
+                  "width": "50px",
+                  "height": "50px",
+                  "position": "absolute",
+                  "z-index": "1",
+                  "background-color": "#fff",
+                  "border-radius": "50%",
+                  "opacity": ".1",
+                  "animation": "circleAnimation 9s linear infinite"
+                },
+                "@keyframes circleAnimation": {
+                  "0%": {
+                    "transform": "scale(1)"
+                  },
+                  "50%": {
+                    "transform": "scale(1.5)"
+                  },
+                  "55%": {
+                    "transform": "scale(1.5)"
+                  },
+                  "100%": {
+                    "transform": "scale(1)"
+                  }
+                }
+              }
+            },
+            "@media (max-width: 991px)": {
+              ".mbr-section-title": {
+                "margin-bottom": "17px"
+              },
+              ".mbr-text": {
+                "margin-bottom": "20px"
+              },
+              ".mbr-section-btn": {
+                "margin-bottom": "40px"
+              },
+              ".image__block": {
+                "margin-bottom": "-100px"
+              }
+            }
+          },
+          "_name": "header3",
+          "_sourceTheme": "firmm4",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header3 firmm4_header3\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Animation\" name=\"showAnimation\" checked=\"\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked=\"\">\n        <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked=\"\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background-2.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#796eff\" selected=\"\">\n            <input type=\"video\" title=\"Video\" value=\"https://youtu.be/iM-NestDPNQ\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Gradient Background\" name=\"gradientBg\" condition=\"bg.type=='color'\" checked=\"\">\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#37c5ab\" condition=\"gradientBg &amp;&amp;bg.type=='color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity}\">\n    </div>\n    \n    <div class=\"animation\" mbr-if=\"showAnimation\">\n        <div class=\"circle1\"></div>\n        <div class=\"circle2\"></div>\n        <div class=\"circle3\"></div>\n        <div class=\"circle4\"></div>\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\"title__block text-white text-center col-lg-8 col-md-8 col-12\">\n                <h3 class=\"mbr-section-subtitle mbr-light mbr-fonts-style\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-subtitle\">Wielofunkcyjny</h3>\n                <h1 class=\"mbr-section-title mbr-fonts-style\" mbr-if=\"showTitle\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\"><b>SUPER CLEANER 2.0</b></h1>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-text, .mbr-section-btn\">Przedstawiamy Państwu proste rewolucyjne urządzenie do szybkiego czyszczenia wszystkich powierzchni w każdym pomieszczeniu.</p>\n                <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" mbr-buttons=\"\" mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-white-outline\" href=\"https://swoimszlakiem-sklep.pl/\" data-app-placeholder=\"Type Text\">Strona Główna</a>\n                    <a class=\"btn btn-md btn-white\" href=\"index.html#video1-1f\" data-app-placeholder=\"Type Text\">Let's mop !</a></div>\n            </div>\n            <div class=\"image__block col-lg-8 col-md-8 col-12\" mbr-if=\"showImage\">\n                <img src=\"@PROJECT_PATH@/assets/images/myjka1-1-1456x948.png\" alt=\"\" title=\"\">\n            </div>\n        </div>\n    </div>\n</section>",
+          "_JSplaceholders": [],
+          "_PHPplaceholders": [],
+          "_anchor": "header3-1f",
+          "_isUserblock": true,
+          "_cid": "u6gvgjhzw3",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
           "_params": {}
         },
         {

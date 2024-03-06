@@ -67,7 +67,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 52,
+    "uniqCompNum": 53,
     "versionPublish": "5.7.12",
     "screenshot": "screenshot.png",
     "mcSmartCart": {
@@ -666,118 +666,136 @@
           "_params": {}
         },
         {
-          "alias": false,
+          "_name": "video1",
+          "_sourceTheme": "firmm4",
           "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 15px)",
-              "padding-bottom": "(@paddingBottom * 15px)"
-            },
-            "& when (@bg-type = \"color\")": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
               "background-color": "@bg-value"
             },
-            "& when (@bg-type = \"image\")": {
+            "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
-            ".row": {
-              "align-items": "center",
-              "justify-content": "space-between"
+            "& when (@showLine)": {
+              ".line": {
+                "height": "1px",
+                "border": "none",
+                "line-height": "1",
+                "background-image": "linear-gradient(45deg, transparent, #e5e5e5, transparent)"
+              },
+              ".mbr-section-head when (@showTitle), (@showSubtitle)": {
+                "margin-top": "120px"
+              }
+            },
+            ".video-wrapper iframe": {
+              "width": "100%"
+            },
+            ".mbr-section-head": {
+              "margin-bottom": "80px"
+            },
+            ".mbr-section-subtitle": {
+              "margin-bottom": "16px",
+              "color": "@primaryColor",
+              "letter-spacing": "1.6px",
+              "line-height": "1",
+              "font-weight": "600"
             },
             ".mbr-section-title": {
+              "color": "#273240"
+            },
+            ".image": {
+              "position": "relative",
+              "background-color": "@videoOverlay",
+              "img": {
+                "width": "100%",
+                "height": "100%",
+                "object-fit": "cover",
+                "opacity": "0.1"
+              }
+            },
+            ".iconfont-wrapper": {
+              "top": "50%",
+              "left": "50%",
+              "width": "80px",
+              "height": "80px",
+              "text-align": "center",
+              "position": "absolute",
+              "border-radius": "50%",
+              "background-color": "#ffffff",
+              "transform": "translate(-50%, -50%)",
+              "-webkit-animation": "popup_video 2s linear infinite",
+              "animation": "popup_video 2s linear infinite",
+              "span": {
+                "font-size": "24px",
+                "line-height": "82px",
+                "color": "@videoOverlay",
+                "cursor": "pointer",
+                "position": "relative",
+                "display": "inline-block",
+                "margin-left": "4px"
+              }
+            },
+            ".modalWindow": {
+              "position": "fixed",
+              "z-index": "5000",
+              "left": "0",
+              "top": "0",
+              "background-color": "rgba(61, 61, 61, 0.65)",
               "width": "100%",
-              "text-align": "left",
-              "margin-bottom": "24px",
-              "color": "#14142b"
-            },
-            ".mbr-text": {
-              "color": "#8c8c95",
-              "margin-bottom": "32px"
-            },
-            ".mbr-section-btn": {
-              "width": "auto",
-              "display": "block"
-            },
-            "ul": {
-              "padding-inline-start": "20px",
-              "margin-bottom": "28px"
-            },
-            "li::marker": {
-              "color": "@markerColor",
-              "width": "10px"
-            },
-            "li": {
-              "margin-bottom": "7px",
-              "color": "#14142b"
-            },
-            "img": {
-              "width": "90%"
-            },
-            ".gray": {
-              "background-color": "@accentColor",
-              "width": "80%",
-              "height": "430px",
-              "margin": "auto",
-              "position": "relative"
-            },
-            ".b": {
-              "max-width": "598px"
-            },
-            ".first": {
-              "position": "absolute",
-              "top": "-10%",
-              "right": "25%"
-            },
-            ".second": {
-              "position": "absolute",
-              "bottom": "-10%",
-              "left": "25%"
-            },
-            "@media (max-width: 992px)": {
-              ".t": {
-                "padding-top": "90px"
+              "height": "100%",
+              ".modalWindow-container": {
+                "display": "table-cell",
+                "vertical-align": "middle"
               },
-              ".b": {
-                "max-width": "initial"
+              ".modalWindow-video": {
+                "height": "~\"calc(80vw / 1.778)\"",
+                "width": "80vw",
+                "margin": "0 auto"
+              }
+            },
+            "a.close": {
+              "position": "absolute",
+              "right": "0",
+              "top": "0",
+              "color": "#ffffff",
+              "z-index": "5000000",
+              "font-size": "16px",
+              "background": "#000",
+              "padding": "10px",
+              "transition": "all 0.2s",
+              "&:hover": {
+                "color": "#ffffff"
+              }
+            },
+            "@media (max-width: 991px)": {
+              ".mbr-section-head": {
+                "margin-bottom": "40px"
               },
-              ".gray": {
-                "width": "50%"
+              ".iconfont-wrapper": {
+                "width": "60px",
+                "height": "60px",
+                "span": {
+                  "font-size": "20px",
+                  "line-height": "62px"
+                }
               }
             },
-            "@media (max-width: 750px)": {
-              ".gray": {
-                "height": "330px"
+            "@keyframes popup_video": {
+              "0%": {
+                "-webkit-box-shadow": "0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 30px rgba(255, 255, 255, 0.2), 0 0 0 50px rgba(255, 255, 255, 0.2), 0 0 0 70px rgba(255, 255, 255, 0.2)",
+                "box-shadow": "0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 30px rgba(255, 255, 255, 0.2), 0 0 0 50px rgba(255, 255, 255, 0.2), 0 0 0 70px rgba(255, 255, 255, 0.2)"
+              },
+              "100%": {
+                "-webkit-box-shadow": "0 0 0 30px rgba(255, 255, 255, 0.2), 0 0 0 50px rgba(255, 255, 255, 0.2), 0 0 0 70px rgba(255, 255, 255, 0.2), 0 0 0 80px transparent",
+                "box-shadow": "0 0 0 30px rgba(255, 255, 255, 0.2), 0 0 0 50px rgba(255, 255, 255, 0.2), 0 0 0 70px rgba(255, 255, 255, 0.2), 0 0 0 80px transparent"
               }
-            },
-            "@media (max-width: 630px)": {
-              ".gray": {
-                "height": "230px"
-              }
-            },
-            "@media (max-width: 450px)": {
-              ".gray": {
-                "height": "200px",
-                "width": "70%"
-              }
-            },
-            ".btn": {
-              "margin-top": "20px"
-            },
-            "& when (@reverseContent)": {
-              ".row": {
-                "flex-direction": "row-reverse"
-              }
-            },
-            ".t": {
-              "max-width": "542px"
-            },
-            ".mbr-text, .button-align, .list": {
-              "text-align": "left"
             }
           },
-          "_name": "header2",
-          "_sourceTheme": "creatorm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header2\" group=\"Headers\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" name=\"fullWidth\" title=\"Full Width\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Slide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"List\" name=\"showList\" checked>\n        <input type=\"checkbox\" title=\"Button\" name=\"showButton\">\n        <input type=\"color\" title=\"Marker Color\" name=\"markerColor\" value=\"#fedb01\">\n        <input type=\"color\" title=\"Accent\" name=\"accentColor\" value=\"#ffffff\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\">\n            <input type=\"image\" title=\"Image\" value=\"@THEME_PATH@/components/_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-between\">\n            <div class=\"col-12 col-lg-6 b\">\n                <div class=\"gray\">\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-1-807x807.png\" alt=\"Mobirise\" class=\"align first\">\n                    <img src=\"@PROJECT_PATH@/assets/images/purpurowa%20panda-815x815.jpg\" alt=\"logo purple misia\" class=\"align second\">\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-6 t\">\n                <div class=\"right-side\">\n                    <h5 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\"><b>Cartoon panda</b></h5>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-text, .button-align, .list\" mbr-if=\"showText\">Ten uroczy breloczek do kluczy ma ładny i modny wygląd, dzięki czemu będzie idealnym dodatkiem do każdej torby lub zestawu kluczy. Wykonany z dbałością o szczegóły, brelok 3D przedstawia wysokiej jakości figurkę, dla osób w każdym wieku. Haczyk i pasek na rękę zapewniają łatwe mocowanie i bezpieczne zapięcie, dzięki czemu klucze lub torba są bezpiecznie w zasięgu ręki.<br></p>\n                    <ul class=\"list mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".list\" data-multiline mbr-article mbr-if=\"showList\">\n                        <li><b>Materiał : PCV</b></li>\n                        <li><b>Styl : Anime, Kawaii</b></li>\n                        <li><b>Zawieszka: stop cynku</b></li>\n                    </ul>\n                    <div class=\"button-align\">\n                        <div class=\"mbr-section-btn\" mbr-if=\"showButton\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-secondary\" href data-app-placeholder=\"Type Text\">Learn More</a></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "sLy9uOhBoE",
-          "_anchor": "header2-f",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"video1 firmm4_video1\" group=\"Images &amp; Videos\" plugins=\"PlayerVimeo\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" value=\"6\" step=\"1\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" value=\"0\" step=\"1\">\n        <input type=\"range\" name=\"textWidth\" title=\"Video\" min=\"7\" max=\"12\" step=\"1\" value=\"8\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Line\" name=\"showLine\">\n        <header>Video</header>\n        <input type=\"color\" value=\"#4154f1\" title=\"Overlay\" name=\"videoOverlay\">\n        <input type=\"text\" title=\"Modal\" name=\"modalVideo\" value=\"https://www.capcut.com/s/CfjD5FZF1wempFYB/\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" value=\"@PROJECT_PATH@/assets/images/background-2.jpg\" title=\"Image\">\n            <input type=\"color\" value=\"#ffffff\" title=\"Color\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    </mbr-parameters>\n    \n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    \n    <div class=\"line\" mbr-if=\"showLine\"></div>\n    <div class=\"container\">\n        <div class=\"mbr-section-head text-center\" mbr-if=\"showTitle || showSubtitle\">\n            <h5 class=\"mbr-section-subtitle mbr-fonts-style\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\">VIDEO</h5>\n            <h4 class=\"mbr-section-title mbr-fonts-style mb-0\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>ZOBACZ MYJKĘ W AKCJI</b></h4>\n        </div>\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-md-{{textWidth}} video-block\">\n                <div class=\"image\">\n                    <img src=\"@PROJECT_PATH@/assets/images/video1grafika-1456x971.jpg\" alt=\"\" title=\"\">\n                <div class=\"mbr-media show-modal\" data-modal=\".modalWindow\">\n                    <div class=\"iconfont-wrapper\">\n                     <a href=\"https://www.capcut.com/s/CfjD5FZF1wempFYB/\"><span mbr-icon=\"\" class=\"mbr-iconfont mobi-mbri-play mobi-mbri\"></span></a>\n                    </div>\n                </div>\n                </div>\n                <div class=\"modalWindow\" style=\"display: none;\">\n                    <div class=\"modalWindow-container\">\n                        <div class=\"modalWindow-video-container\">\n                            <div class=\"modalWindow-video\">\n                                <iframe width=\"100%\" height=\"100%\" data-src=\"{{modalVideo}}\" frameborder=\"0\" allowfullscreen=\"1\"></iframe>\n                            </div>\n                            <a class=\"close\" role=\"button\" data-dismiss=\"modal\" data-bs-dismiss=\"modal\">\n                                <span aria-hidden=\"true\" class=\"mbri-close mbr-iconfont closeModal\"></span>\n                                <span class=\"sr-only visually-hidden\">Close</span>\n                            </a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "video1-1g",
+          "_isUserblock": true,
+          "_cid": "u6gvI6rajN",
           "_protectedParams": [],
           "_global": false,
           "_once": false,

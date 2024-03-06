@@ -67,7 +67,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 61,
+    "uniqCompNum": 62,
     "versionPublish": "5.7.12",
     "screenshot": "screenshot.png",
     "mcSmartCart": {
@@ -1675,6 +1675,115 @@
           "_anchor": "accordion01-1o",
           "_isUserblock": true,
           "_cid": "u6gyczcyc7",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".card-subtitle": {
+              "text-align": "left",
+              "margin-left": "-15px",
+              "color": "#8c8c95"
+            },
+            ".shadow": {
+              "border-radius": "34px",
+              "box-shadow": "0 5px 12px 0 rgba(20, 20, 43, 0.05) !important",
+              "overflow": "visible",
+              "padding": "48px 42px 38px",
+              "border": "1px solid #eff0f6"
+            },
+            ".iconfont-wrapper": {
+              "text-align": "left",
+              "margin-bottom": "16px"
+            },
+            ".card-text": {
+              "margin-bottom": "16px",
+              "text-align": "left",
+              "color": "#8c8c95"
+            },
+            ".button-align": {
+              "margin-top": "36px",
+              "text-align": "center"
+            },
+            ".mbr-section-btn": {
+              "width": "auto",
+              "display": "inline-block"
+            },
+            "img": {
+              "border-radius": "10%",
+              "height": "65px",
+              "width": "auto",
+              "margin": "0"
+            },
+            ".mbr-iconfont::before": {
+              "font-size": "25px"
+            },
+            ".card-title": {
+              "margin-bottom": "4px",
+              "padding": "0",
+              "margin-left": "-15px"
+            },
+            ".col-12.col-md-6.col-lg-4": {
+              "margin-top": "30px"
+            },
+            ".col-12.col-md-6.col-lg-4:nth-child(1)": {
+              "margin-top": "0px"
+            },
+            ".col-12.col-md-6.col-lg-4:nth-child(2)": {
+              "margin-top": "0px"
+            },
+            ".col-12.col-md-6.col-lg-4:nth-child(3)": {
+              "margin-top": "0px"
+            },
+            "@media (max-width: 992px)": {
+              ".col-12.col-md-6.col-lg-4:nth-child(3)": {
+                "margin-top": "30px"
+              }
+            },
+            "@media (max-width: 768px)": {
+              ".col-12.col-md-6.col-lg-4:nth-child(2)": {
+                "margin-top": "30px"
+              }
+            },
+            ".align": {
+              "display": "flex",
+              "align-items": "center"
+            },
+            ".mbr-section-title": {
+              "margin-bottom": "56px",
+              "color": "#14142b"
+            },
+            ".btn": {
+              "margin-top": "20px"
+            },
+            "@media (max-width: 767px)": {
+              ".shadow": {
+                "padding": "40px 40px 32px"
+              }
+            },
+            "@media (max-width: 479px)": {
+              ".shadow": {
+                "padding": "33px 25px 28px"
+              }
+            }
+          },
+          "_name": "people2",
+          "_sourceTheme": "creatorm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"people2\" group=\"People\">\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"5\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Icons\" name=\"showIcons\" checked=\"\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Role\" name=\"showName\" checked=\"\">\n        <input type=\"checkbox\" title=\"Name\" name=\"showDesc\" checked=\"\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-2.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <h4 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\" mbr-if=\"showSubtitle\"><b>Komentarze</b></h4>\n        <div class=\"row\">\n            <div class=\"col-12 col-md-6 col-lg-4\">\n                <div class=\"shadow\">\n                    <div class=\"iconfont-wrapper\" mbr-if=\"showIcons\">\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                    </div>\n                    <h5 class=\"card-text\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text, .iconfont-wrapper\" mbr-if=\"showText\">Nie spodziewałam się, że mini mop może być tak użyteczny! Super Cleaner jest fantastyczny - świetnie radzi sobie z każdym rodzajem brudu.</h5>\n                    <div class=\"row\">\n                        <div class=\"wrap-img col-auto\">\n                            <img src=\"@PROJECT_PATH@/assets/images/logo2-1.png\" alt=\"\">\n                        </div>\n                        <div class=\"col align\">\n                            <div>\n                                <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-title\" mbr-if=\"showName\"><b>Joanna Dąbrowska</b></h5>\n                                <h5 class=\"card-subtitle mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-subtitle\" mbr-if=\"showDesc\">Contact me</h5>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6 col-lg-4\">\n                <div class=\"shadow\">\n                    <div class=\"iconfont-wrapper\" mbr-if=\"showIcons\">\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                    </div>\n                    <h5 class=\"card-text\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text, .iconfont-wrapper\" mbr-if=\"showText\">Solidny materiał , wydają się być wysokiej jakości świetnie radzi sobie z czyszczeniem wszelkich blatów.</h5>\n                    <div class=\"row\">\n                        <div class=\"wrap-img col-auto\">\n                            <img src=\"@PROJECT_PATH@/assets/images/logo2-1.png\" alt=\"\">\n                        </div>\n                        <div class=\"col align\">\n                            <div>\n                                <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-title\" mbr-if=\"showName\"><b>Anna Kalicz</b></h5>\n                                <h5 class=\"card-subtitle mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-subtitle\" mbr-if=\"showDesc\">Contact me</h5>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6 col-lg-4\">\n                <div class=\"shadow\">\n                    <div class=\"iconfont-wrapper\" mbr-if=\"showIcons\">\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                    </div>\n                    <h5 class=\"card-text\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text, .iconfont-wrapper\" mbr-if=\"showText\">Nie spodziewałam się, że mini mop może być tak użyteczny ! Super dla zapracowanych ludzi.</h5>\n                    <div class=\"row\">\n                        <div class=\"wrap-img col-auto\">\n                            <img src=\"@PROJECT_PATH@/assets/images/logo2-1.png\" alt=\"\">\n                        </div>\n                        <div class=\"col align\">\n                            <div>\n                                <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-title\" mbr-if=\"showName\"><b>Adela Kliszewska</b></h5>\n                                <h5 class=\"card-subtitle mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-subtitle\" mbr-if=\"showDesc\">Contact me</h5>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6 col-lg-4\">\n                <div class=\"shadow\">\n                    <div class=\"iconfont-wrapper\" mbr-if=\"showIcons\">\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                    </div>\n                    <h5 class=\"card-text\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text, .iconfont-wrapper\" mbr-if=\"showText\">Wreszcie mogę szybko i łatwo pozbyć się zacieków i brudu ze swoich okien bez konieczności moczenia rąk. Serdecznie polecam każdemu!</h5>\n                    <div class=\"row\">\n                        <div class=\"wrap-img col-auto\">\n                            <img src=\"@PROJECT_PATH@/assets/images/logo2-1.png\" alt=\"\">\n                        </div>\n                        <div class=\"col align\">\n                            <div>\n                                <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-title\" mbr-if=\"showName\"><b>Piotr Gacek</b></h5>\n                                <h5 class=\"card-subtitle mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-subtitle\" mbr-if=\"showDesc\">Contact me</h5>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6 col-lg-4\">\n                <div class=\"shadow\">\n                    <div class=\"iconfont-wrapper\" mbr-if=\"showIcons\">\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                    </div>\n                    <h5 class=\"card-text\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text, .iconfont-wrapper\" mbr-if=\"showText\">Super Cleaner 2.0 to świetne narzędzie do szybkiego sprzątania. Lekki, poręczny i łatwy w użyciu. Nieco trudniej radzi sobie z mocniejszymi zabrudzeniami, ale ogólnie jestem zadowolona z efektów.</h5>\n                    <div class=\"row\">\n                        <div class=\"wrap-img col-auto\">\n                            <img src=\"@PROJECT_PATH@/assets/images/logo2-1.png\" alt=\"\">\n                        </div>\n                        <div class=\"col align\">\n                            <div>\n                                <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-title\" mbr-if=\"showName\"><b>Ola Kliweryńska</b></h5>\n                                <h5 class=\"card-subtitle mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-subtitle\" mbr-if=\"showDesc\">Contact me</h5>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6 col-lg-4\">\n                <div class=\"shadow\">\n                    <div class=\"iconfont-wrapper\" mbr-if=\"showIcons\">\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                        <span mbr-icon=\"\" class=\"mbr-iconfont mbr-iconfont-1 mobi-mbri-star mobi-mbri\" style=\"color: rgb(255, 107, 0); fill: rgb(255, 107, 0);\"></span>\n                    </div>\n                    <h5 class=\"card-text\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text, .iconfont-wrapper\" mbr-if=\"showText\">Obrotowa główka naprawdę ułatwia dostęp do trudno dostępnych miejsc, a wyciskanie działa bez zarzutu. Nie jest to jednak cudowne urządzenie, ale na pewno ułatwia codzienne sprzątanie.</h5>\n                    <div class=\"row\">\n                        <div class=\"wrap-img col-auto\">\n                            <img src=\"@PROJECT_PATH@/assets/images/logo2-1.png\" alt=\"\">\n                        </div>\n                        <div class=\"col align\">\n                            <div>\n                                <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-title\" mbr-if=\"showName\"><b>Marlena Adamska</b></h5>\n                                <h5 class=\"card-subtitle mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-subtitle\" mbr-if=\"showDesc\">Contact me</h5>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"button-align\">\n            <div class=\"mbr-section-btn\" mbr-buttons=\"\" mbr-theme-style=\"display-4\"><a class=\"btn btn-primary\" href=\"mailto:kontakt@swoimszlakiem-sklep.pl\" data-app-placeholder=\"Type Text\">Contact Me</a></div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "people2-1p",
+          "_isUserblock": true,
+          "_cid": "u6gyyVfYoT",
           "_protectedParams": [],
           "_global": false,
           "_once": false,

@@ -67,7 +67,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 59,
+    "uniqCompNum": 60,
     "versionPublish": "5.7.12",
     "screenshot": "screenshot.png",
     "mcSmartCart": {
@@ -1341,6 +1341,126 @@
           "_anchor": "form1-1l",
           "_isUserblock": true,
           "_cid": "u6gxlIEPv7",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when (@overlay)": {
+                ".mbr-overlay": {
+                  "background": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".mbr-overlay": {
+              "z-index": "1"
+            },
+            ".main-container": {
+              "display": "flex",
+              "flex-wrap": "wrap",
+              "border-bottom": "1px solid #7F8678",
+              "border-top": "1px solid #7F8678",
+              "margin-top": "-1px",
+              "position": "relative",
+              "z-index": "2"
+            },
+            ".time-text": {
+              "color": "#3d3d3d",
+              "margin-right": "auto"
+            },
+            ".artist-text": {
+              "color": "#3d3d3d"
+            },
+            ".img-container": {
+              "display": "flex",
+              "align-items": "center",
+              "justify-content": "center",
+              "flex-direction": "column",
+              "padding": "30px 32px",
+              "min-height": "700px"
+            },
+            ".first-container": {
+              "border-bottom": "1px solid #7F8678",
+              "@media (min-width: 992px)": {
+                "border-right": "1px solid #7F8678",
+                "border-bottom": "none"
+              }
+            },
+            ".item-img": {
+              "display": "flex",
+              "flex-direction": "column",
+              "max-width": "300px",
+              "overflow": "hidden",
+              "height": "auto",
+              "margin": "auto 0",
+              ".img": {
+                "max-height": "365px",
+                "margin-bottom": "24px",
+                "overflow": "hidden"
+              },
+              "& img": {
+                "object-fit": "cover",
+                "height": "365px",
+                "transition": "1.16s",
+                "transform": "scale(1)",
+                "min-width": "100%",
+                "transform-style": "preserve-3d"
+              },
+              "&:hover": {
+                "& img": {
+                  "transform": "scale(1.5)"
+                }
+              }
+            },
+            ".item-info": {
+              "display": "flex",
+              "align-items": "flex-end",
+              "width": "100%",
+              "@media (max-width: 575px)": {
+                "flex-wrap": "wrap"
+              }
+            },
+            ".link-wrap": {
+              "margin-right": "auto"
+            },
+            ".emerging-underline-link": {
+              "color": "#3d3d3d"
+            },
+            ".mbr-section-btn": {
+              "text-align": "right",
+              "margin-bottom": "-9.6px"
+            },
+            ".btn": {
+              "padding": "3px 22px",
+              "border-radius": "20px",
+              "min-height": "38px"
+            },
+            ".btn-black-outline": {
+              "border": "1px solid #000000",
+              "&:hover": {
+                "border": "1px solid #000000",
+                "background": "#000000 !important",
+                "color": "#ffffff !important"
+              }
+            }
+          },
+          "_name": "pricing1",
+          "_sourceTheme": "journalm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"pricing1\" group=\"Pricing\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <input type=\"id\" name=\"sliderId\">\n        <header>Size</header>\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Card Title\" name=\"showImgTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Card Text\" name=\"showImgText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Card Links\" name=\"showLinks\" checked=\"\">\n        <input type=\"checkbox\" title=\"Card Button\" name=\"showButton\" checked=\"\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" required=\"\" parallax=\"\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#fffdf7\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n\n    <div class=\"main-container col-12\">\n        <div class=\"img-container first-container col-12 col-lg-6\">\n            <div class=\"item-img\">\n                <div class=\"img\">\n                    <img src=\"@PROJECT_PATH@/assets/images/szczotka-do-czyszczenia-z-aplikatorem-dozownikiem-scz07b-533x533.jpg\" alt=\"\">\n                </div>\n                <div class=\"img-text\">\n                    <h1 class=\"mbr-section-title mbr-fonts-style mb-0 title mt-0\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-4\" mbr-if=\"showImgTitle\">Szybko myjka z aplikatorem/biała</h1>\n                    <p class=\"mbr-text mbr-fonts-style artist-text\" data-app-selector=\".artist-text\" mbr-theme-style=\"display-7\" mbr-if=\"showImgText\">31,90 zł</p>\n                </div>\n            </div>\n            <div class=\"item-info\">\n                <div class=\"link-wrap\" mbr-if=\"showLinks\">\n                    <p class=\"link link-contacts mbr-fonts-style align-left mb-0\" mbr-theme-style=\"display-7\" data-app-selector=\".link-contacts\">dodatki</p>\n                </div>\n                <div mbr-buttons=\"\" mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButton\"><a class=\"btn btn-black-outline\" href=\"https://swoimszlakiem-sklep.pl/product/81874483-szybko-myjka-z-aplikatorem-biala\" data-app-placeholder=\"Type Text\">PRŹEJDŹ DO ZAKUPU</a></div>\n            </div>\n        </div>\n        <div class=\"img-container col-12 col-lg-6\">\n            <div class=\"item-img\">\n                <div class=\"img\">\n                    <img src=\"@PROJECT_PATH@/assets/images/szczotka-do-czyszczenia-z-aplikatorem-dozownikiem-scz07m-529x529.jpg\" alt=\"\">\n                </div>\n                <div class=\"img-text\">\n                    <h1 class=\"mbr-section-title mbr-fonts-style mb-0 title mt-0\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-4\" mbr-if=\"showImgTitle\">Szybko myjka z aplikatorem/seledyn</h1>\n                    <p class=\"mbr-text mbr-fonts-style artist-text\" data-app-selector=\".artist-text\" mbr-theme-style=\"display-7\" mbr-if=\"showImgText\">31,90 zł</p>\n                </div>\n            </div>\n            <div class=\"item-info\">\n                <div class=\"link-wrap\" mbr-if=\"showLinks\">\n                    <p class=\"link link-contacts mbr-fonts-style align-left mb-0\" mbr-theme-style=\"display-7\" data-app-selector=\".link-contacts\">dodatki</p>\n                </div>\n                <div mbr-buttons=\"\" mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButton\"><a class=\"btn btn-black-outline\" href=\"https://swoimszlakiem-sklep.pl/product/81874482-szybko-myjka-z-aplikatorem-seledyn\" data-app-placeholder=\"Type Text\">PRZEJDŹ DO ZAKUPU</a></div>\n            </div>\n        </div>\n    </div>\n\n</section>",
+          "_anchor": "pricing1-1n",
+          "_isUserblock": true,
+          "_cid": "u6gxJoT9yh",
           "_protectedParams": [],
           "_global": false,
           "_once": false,

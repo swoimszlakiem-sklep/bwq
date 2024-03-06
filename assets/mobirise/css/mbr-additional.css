@@ -1778,6 +1778,104 @@ button {
     margin-top: 25px;
   }
 }
+.cid-u6gxJoT9yh {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background-color: #ffffff;
+}
+.cid-u6gxJoT9yh .mbr-overlay {
+  z-index: 1;
+}
+.cid-u6gxJoT9yh .main-container {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #7F8678;
+  border-top: 1px solid #7F8678;
+  margin-top: -1px;
+  position: relative;
+  z-index: 2;
+}
+.cid-u6gxJoT9yh .time-text {
+  color: #3d3d3d;
+  margin-right: auto;
+}
+.cid-u6gxJoT9yh .artist-text {
+  color: #3d3d3d;
+}
+.cid-u6gxJoT9yh .img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 32px;
+  min-height: 700px;
+}
+.cid-u6gxJoT9yh .first-container {
+  border-bottom: 1px solid #7F8678;
+}
+@media (min-width: 992px) {
+  .cid-u6gxJoT9yh .first-container {
+    border-right: 1px solid #7F8678;
+    border-bottom: none;
+  }
+}
+.cid-u6gxJoT9yh .item-img {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  overflow: hidden;
+  height: auto;
+  margin: auto 0;
+}
+.cid-u6gxJoT9yh .item-img .img {
+  max-height: 365px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.cid-u6gxJoT9yh .item-img img {
+  object-fit: cover;
+  height: 365px;
+  transition: 1.16s;
+  transform: scale(1);
+  min-width: 100%;
+  transform-style: preserve-3d;
+}
+.cid-u6gxJoT9yh .item-img:hover img {
+  transform: scale(1.5);
+}
+.cid-u6gxJoT9yh .item-info {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+@media (max-width: 575px) {
+  .cid-u6gxJoT9yh .item-info {
+    flex-wrap: wrap;
+  }
+}
+.cid-u6gxJoT9yh .link-wrap {
+  margin-right: auto;
+}
+.cid-u6gxJoT9yh .emerging-underline-link {
+  color: #3d3d3d;
+}
+.cid-u6gxJoT9yh .mbr-section-btn {
+  text-align: right;
+  margin-bottom: -9.6px;
+}
+.cid-u6gxJoT9yh .btn {
+  padding: 3px 22px;
+  border-radius: 20px;
+  min-height: 38px;
+}
+.cid-u6gxJoT9yh .btn-black-outline {
+  border: 1px solid #000000;
+}
+.cid-u6gxJoT9yh .btn-black-outline:hover {
+  border: 1px solid #000000;
+  background: #000000 !important;
+  color: #ffffff !important;
+}
 .cid-u6gxmG2xvD {
   padding-top: 5rem;
   padding-bottom: 5rem;
